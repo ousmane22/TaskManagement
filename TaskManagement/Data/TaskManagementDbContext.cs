@@ -13,6 +13,6 @@ namespace TaskManagement.Data
         public DbSet<Administrator>  Administrators { get; set;}
         public DbSet<Student>  Students { get; set;}
         public DbSet<Teacher>  Teachers { get; set;}
-        public DbSet<Models.Task> Tasks { get; set;}
+        public DbSet<TaskUser> TaskUsers { get; set;}
     }
 }

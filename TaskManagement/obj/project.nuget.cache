@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "toFDiLTQGzckqTvyCo87/WwEe7ZYRycJnV+3OlaBkBF9kO5SpOMXCaZJxil9dcIGTLF3r5u91kgkkjfieVcfKQ==",
+  "dgSpecHash": "958hX3ssnd4Z/K4je6Ue8QjY8lMWMS6ApnbbXZlqFsO2gxJG5Ot128U6Agqe7PMgIjVwy01AVKTNtEzKfNyd9Q==",
   "success": true,
-  "projectFilePath": "C:\\Users\\OUSMANE\\Desktop\\Development\\Web\\ASP.NET_CORE\\TaskManagement\\TaskManagement\\TaskManagement.csproj",
+  "projectFilePath": "C:\\Users\\OUSMANE\\Desktop\\Development\\Web\\TaskManagement\\TaskManagement\\TaskManagement.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\OUSMANE\\.nuget\\packages\\azure.core\\1.24.0\\azure.core.1.24.0.nupkg.sha512",
     "C:\\Users\\OUSMANE\\.nuget\\packages\\azure.identity\\1.6.0\\azure.identity.1.6.0.nupkg.sha512",

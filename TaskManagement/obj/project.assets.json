@@ -7452,11 +7452,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\OUSMANE\\Desktop\\Development\\Web\\ASP.NET_CORE\\TaskManagement\\TaskManagement\\TaskManagement.csproj",
+      "projectUniqueName": "C:\\Users\\OUSMANE\\Desktop\\Development\\Web\\TaskManagement\\TaskManagement\\TaskManagement.csproj",
       "projectName": "TaskManagement",
-      "projectPath": "C:\\Users\\OUSMANE\\Desktop\\Development\\Web\\ASP.NET_CORE\\TaskManagement\\TaskManagement\\TaskManagement.csproj",
+      "projectPath": "C:\\Users\\OUSMANE\\Desktop\\Development\\Web\\TaskManagement\\TaskManagement\\TaskManagement.csproj",
       "packagesPath": "C:\\Users\\OUSMANE\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\OUSMANE\\Desktop\\Development\\Web\\ASP.NET_CORE\\TaskManagement\\TaskManagement\\obj\\",
+      "outputPath": "C:\\Users\\OUSMANE\\Desktop\\Development\\Web\\TaskManagement\\TaskManagement\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\OUSMANE\\AppData\\Roaming\\NuGet\\NuGet.Config",
