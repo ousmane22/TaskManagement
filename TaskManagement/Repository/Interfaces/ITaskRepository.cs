@@ -2,15 +2,9 @@
 
 namespace TaskManagement.Repository.Interfaces
 {
-    public interface ITaskRepository
+    public interface ITaskRepository:IGenericRepository<TaskUser>
     {
-        IEnumerable<TaskUser> GetTasks();
-        TaskUser GetTaskById(int id);
+        Task<IEnumerable<TaskUser>> GetTasksByUserIdAsync(int userId);
 
-        TaskUser GetTaskByName(string name);
-
-        TaskUser AddTask(TaskUser task);
-
-        TaskUser delete(int id);
     }
 }

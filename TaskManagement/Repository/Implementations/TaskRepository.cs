@@ -1,4 +1,5 @@
-﻿using System.Threading.Tasks;
+﻿using Microsoft.EntityFrameworkCore;
+using System.Threading.Tasks;
 using TaskManagement.Data;
 using TaskManagement.Models;
 using TaskManagement.Repository.Interfaces;
@@ -7,53 +8,55 @@ namespace TaskManagement.Repository.Implementations
 {
     public class TaskRepository : ITaskRepository
     {
-        private readonly TaskManagementDbContext _taskManagementDbContext;
+        private readonly TaskManagementDbContext _context;
 
-        public TaskRepository(TaskManagementDbContext taskManagementDbContext)
+        public TaskRepository(TaskManagementDbContext context)
         {
-            _taskManagementDbContext = taskManagementDbContext;
+            _context = context;
         }
 
-        public TaskUser AddTask(TaskUser task)
+        public async Task<int> Add(TaskUser task)
         {
-            _taskManagementDbContext.TaskUsers.Add(task);
-            _taskManagementDbContext.SaveChanges();
-            return task;
+            _context.TaskUsers.Add(task);
+            await _context.SaveChangesAsync();
+            return task.Id; 
         }
 
-        public TaskUser delete(int id)
+        public async Task<bool> Delete(int id)
         {
-            var taskToDelete = _taskManagementDbContext.TaskUsers.Find(id);
+            var taskToDelete = await _context.TaskUsers.FindAsync(id);
+
             if (taskToDelete == null)
             {
-                throw new Exception("Tâche introuvable");
+                return false;
             }
 
-            _taskManagementDbContext.TaskUsers.Remove(taskToDelete);
-            _taskManagementDbContext.SaveChanges();
-            return taskToDelete;
+            _context.TaskUsers.Remove(taskToDelete);
+            await _context.SaveChangesAsync();
+            return true; 
         }
 
-        public TaskUser GetTaskById(int id)
+        public async Task<IEnumerable<TaskUser>> GetAll()
         {
-            var task = _taskManagementDbContext.TaskUsers.FirstOrDefault(task => task.Id == id);
-
-            if (task == null)
-                throw new NotFoundException($"Task with ID {id} not found");
-            return task;
-           
+            return await _context.TaskUsers.ToListAsync();
         }
 
-        public TaskUser GetTaskByName(string name)
+        public async Task<TaskUser> GetById(int id)
         {
-            return _taskManagementDbContext.TaskUsers.FirstOrDefault(task => task.Title == name);
+            return await _context.TaskUsers.FindAsync(id);
         }
 
-        public IEnumerable<TaskUser> GetTasks()
+        public async Task<TaskUser> GetByName(string name)
         {
-            return _taskManagementDbContext.TaskUsers.ToList();
+            return await _context.TaskUsers.FirstOrDefaultAsync(task => task.Title == name);
         }
 
-       
+        public async Task<IEnumerable<TaskUser>> GetTasksByUserIdAsync(int userId)
+        {
+            var tasks = await _context.TaskUsers.Where(task => task.UserId == userId).ToListAsync();
+
+            return tasks;
+
+        }
     }
 }

@@ -1,7 +1,15 @@
+using Microsoft.AspNetCore.Hosting;
 using Microsoft.EntityFrameworkCore;
 using TaskManagement.Data;
+using TaskManagement.DTO;
+using AutoMapper;
+using TaskManagement.Repository;
 
 var builder = WebApplication.CreateBuilder(args);
+
+builder.Services.RegisterApplicationServices();
+builder.Services.AddAutoMapper(typeof(MappingProfile));
+
 
 // Add services to the container.
 builder.Services.AddDbContext<TaskManagementDbContext>(options => 

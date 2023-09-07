@@ -2,7 +2,7 @@
 
 namespace TaskManagement.Repository.Interfaces
 {
-    public interface IStudentRepository:IGenericRepository<Student>
+    public interface IUserRepository:IGenericRepository<User>
     {
     }
 }

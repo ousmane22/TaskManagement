@@ -1,6 +1,10 @@
-﻿namespace TaskManagement.Repository.Interfaces
+﻿using TaskManagement.DTO;
+using TaskManagement.Models;
+
+namespace TaskManagement.Repository.Interfaces
 {
-    public interface ITeacherRepository
+    public interface ITeacherRepository:IGenericRepository<Teacher>
     {
+        //Task<int> AddTeacherWithDto(TeacherCreationModel teacherDto);
     }
 }

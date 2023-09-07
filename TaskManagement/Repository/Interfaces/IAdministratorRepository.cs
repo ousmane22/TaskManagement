@@ -1,6 +1,8 @@
-﻿namespace TaskManagement.Repository.Interfaces
+﻿using TaskManagement.Models;
+
+namespace TaskManagement.Repository.Interfaces
 {
-    public interface IAdministratorRepository
+    public interface IAdministratorRepository:IGenericRepository<Administrator>
     {
     }
 }

@@ -176,3 +176,5 @@ C:\Users\OUSMANE\Desktop\Development\Web\TaskManagement\TaskManagement\obj\Debug
 C:\Users\OUSMANE\Desktop\Development\Web\TaskManagement\TaskManagement\obj\Debug\net6.0\TaskManagement.pdb
 C:\Users\OUSMANE\Desktop\Development\Web\TaskManagement\TaskManagement\obj\Debug\net6.0\TaskManagement.genruntimeconfig.cache
 C:\Users\OUSMANE\Desktop\Development\Web\TaskManagement\TaskManagement\obj\Debug\net6.0\ref\TaskManagement.dll
+C:\Users\OUSMANE\Desktop\Development\Web\TaskManagement\TaskManagement\bin\Debug\net6.0\AutoMapper.dll
+C:\Users\OUSMANE\Desktop\Development\Web\TaskManagement\TaskManagement\bin\Debug\net6.0\AutoMapper.Extensions.Microsoft.DependencyInjection.dll
