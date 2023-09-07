@@ -1,4 +1,5 @@
-﻿using TaskManagement.Data;
+﻿using System.Threading.Tasks;
+using TaskManagement.Data;
 using TaskManagement.Models;
 using TaskManagement.Repository.Interfaces;
 
@@ -20,33 +21,39 @@ namespace TaskManagement.Repository.Implementations
             return task;
         }
 
-        public Task delete(Task task)
+        public TaskUser delete(int id)
         {
-            var taskToDelete = _taskManagementDbContext.Tasks.Find(id);
+            var taskToDelete = _taskManagementDbContext.TaskUsers.Find(id);
             if (taskToDelete == null)
             {
                 throw new Exception("Tâche introuvable");
             }
 
-            _taskManagementDbContext.Tasks.Remove(taskToDelete);
+            _taskManagementDbContext.TaskUsers.Remove(taskToDelete);
             _taskManagementDbContext.SaveChanges();
             return taskToDelete;
         }
 
         public TaskUser GetTaskById(int id)
         {
-            return _taskManagementDbContext.TaskUsers.Find(id);
+            var task = _taskManagementDbContext.TaskUsers.FirstOrDefault(task => task.Id == id);
+
+            if (task == null)
+                throw new NotFoundException($"Task with ID {id} not found");
+            return task;
            
         }
 
         public TaskUser GetTaskByName(string name)
         {
-            throw new NotImplementedException();
+            return _taskManagementDbContext.TaskUsers.FirstOrDefault(task => task.Title == name);
         }
 
         public IEnumerable<TaskUser> GetTasks()
         {
-            throw new NotImplementedException();
+            return _taskManagementDbContext.TaskUsers.ToList();
         }
+
+       
     }
 }

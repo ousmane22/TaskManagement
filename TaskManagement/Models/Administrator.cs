@@ -1,6 +1,6 @@
 ﻿namespace TaskManagement.Models
 {
-    public class Administrator:EntityBase
+    public class Administrator
     {
         public string? Job { get; set; }
     }

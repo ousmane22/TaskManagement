@@ -11,6 +11,6 @@ namespace TaskManagement.Repository.Interfaces
 
         TaskUser AddTask(TaskUser task);
 
-        Task delete(Task task);
+        TaskUser delete(int id);
     }
 }

@@ -14,5 +14,6 @@ namespace TaskManagement.Data
         public DbSet<Student>  Students { get; set;}
         public DbSet<Teacher>  Teachers { get; set;}
         public DbSet<TaskUser> TaskUsers { get; set;}
+        public DbSet<User> Users { get; set;}
     }
 }

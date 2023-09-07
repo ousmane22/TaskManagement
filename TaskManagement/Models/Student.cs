@@ -1,6 +1,6 @@
 ﻿namespace TaskManagement.Models
 {
-    public class Student:EntityBase
+    public class Student
     {
         public string? Level { get; set; }
     }
